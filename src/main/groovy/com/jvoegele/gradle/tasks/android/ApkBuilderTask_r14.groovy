@@ -41,6 +41,7 @@ class ApkBuilderTask_r14 extends AndroidAntTask {
 		  sourcefolder(path: project.sourceSets.main.output.resourcesDir)
 	  }
       nativefolder(path: androidConvention.nativeLibsDir)
+      project.configurations.runtime.each { jarfile(path: it) }
     }
 /*
             <apkbuilder>
